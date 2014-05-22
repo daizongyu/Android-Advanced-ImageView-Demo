@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appsdk="http://www.app-sdk.com/schema"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_marginTop="39dip" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <!--
+			        You can set attr: 
+			        appsdk:aspectRatio="float"
+			        appsdk:imageDefault="reference"
+			        appsdk:imageLoading="reference"
+			        appsdk:imageError="reference"
+			        appsdk:dotNormal="reference"
+			        appsdk:dotFocus="reference"
+                -->
+
+                <com.appsdk.advancedimageview.AdvancedImageCarousel
+                    android:id="@+id/image_carousel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@null"
+                    appsdk:aspectRatio="1.5" />
+
+                <ListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                </ListView>
+            </LinearLayout>
+        </FrameLayout>
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:tag="tabs" >
+        </TabWidget>
+    </TabHost>
+
+</RelativeLayout>
